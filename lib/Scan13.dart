@@ -1,26 +1,17 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-class Scan13 extends StatefulWidget {
-  @override
-  _Scan13State createState() => _Scan13State();
-}
+import 'package:scan13/pagecontrol.dart';
 
-class _Scan13State extends State<Scan13> {
-  String _output = '_________';
 
-  _scanResult() async {
-    await FlutterBarcodeScanner.scanBarcode(
-        "#ff7866", "Выйти", true, ScanMode.BARCODE)
-        .then((result) {
-      setState(() {
-        _output = result;
-      });
-    });
-// Библиотека https://pub.dev/packages/flutter_barcode_scanner
-// flutter_barcode_scanner 2.0.0
+
+class Scan13 extends StatelessWidget {
+
+  Scan13(){
+    Get.put(Scan13State());
   }
 
   @override
@@ -60,18 +51,18 @@ class _Scan13State extends State<Scan13> {
                 color: Colors.lightGreen,
                 borderRadius: BorderRadius.circular(20)),
 
-              child:
-                Container(
-                  child: Text(_output, // передача на экран резуьтата сканирования
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Color(0xFF393E46),
-                      fontWeight: FontWeight.w600,
-
-                    ),
-                  ),
-                ),
+              child: Container(
+                child:GetBuilder<Scan13State>(
+                  builder: (controller) {
+                    return Text(
+                      controller.output, // передача на экран резуьтата сканирования
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: Color(0xFF393E46),
+                        fontWeight: FontWeight.w600,),);
+                  })
+              ),
             ),
             Spacer(),
             Text(
@@ -91,7 +82,9 @@ class _Scan13State extends State<Scan13> {
                       ),
                       shadowColor: Colors.white,
                       primary: Colors.lightGreen),
-                  onPressed: () =>_scanResult(), // переход на экран сканирования
+                  onPressed: () {
+                    Get.find<Scan13State>().scanResult();
+                  }, // переход на экран сканирования
                   child: Transform.rotate(
                     angle: 90 * 3.14 / 180,
                     child: Icon(Icons.document_scanner,
