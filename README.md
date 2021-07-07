@@ -1,8 +1,5 @@
 # ScanCodeFlutter
 Scan EAN13 Code Flutter
 
-[![ссылка на видео](logo2.png)](https://youtu.be/JcDlbNT4p2g)
-__Видео работы /
-приложения можно
-посмотреть по ссылке__
-
+[![__Пример работы приложения__](logo2.png)](https://youtu.be/JcDlbNT4p2g)
+__Пример работы приложения__
