@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
@@ -16,11 +15,6 @@ class Scan13State extends GetxController {
       output = codeScan;
       update();
     }
-    //     .then((result) {
-    //   setState(() {
-    //     _output = result;
-    //   });
-    // });
 // Библиотека https://pub.dev/packages/flutter_barcode_scanner
 // flutter_barcode_scanner 2.0.0
   }

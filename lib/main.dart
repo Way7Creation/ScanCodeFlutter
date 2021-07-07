@@ -23,7 +23,6 @@ void main()
             theme: ThemeData(brightness: Brightness.dark,
                 primaryColor: Colors.lightGreen,
                 accentColor: Colors.lightGreen,
-                // Define the default font family.
                 fontFamily: 'montserrat'),
             getPages: [
                 GetPage(name: '/', page: () => Scan13())
