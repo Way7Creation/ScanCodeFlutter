@@ -1,3 +1,4 @@
 # ScanCodeFlutter
 Scan EAN13 Code Flutter
-[![ссылка на видел]](https://youtu.be/syrGPPekLHQ)
+
+[![ссылка на видео]](https://youtu.be/syrGPPekLHQ)
